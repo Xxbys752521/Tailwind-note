@@ -8,6 +8,7 @@ function App() {
       <SideBar />
       <Channelbar />
       <ContentContainer />
+      <p>test</p>
     </div>
   );
 }
