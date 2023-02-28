@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { BsHash } from "react-icons/bs";
 import { FaChevronDown, FaChevronRight, FaPlus } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
@@ -20,11 +20,11 @@ const ChannelBar = () => {
   );
 };
 
-const Dropdown = ({ header, selections }) => {
+const Dropdown = ({ header, selections }: dropdownPropsType) => {
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <div className="dropdown" key={uuidv4()}>
+    <div className="dropdown">
       <div onClick={() => setExpanded(!expanded)} className="dropdown-header">
         <ChevronIcon expanded={expanded} />
         <h5
@@ -41,12 +41,14 @@ const Dropdown = ({ header, selections }) => {
       </div>
       {expanded &&
         selections &&
-        selections.map((selection) => <TopicSelection selection={selection} />)}
+        selections.map((selection) => (
+          <TopicSelection selection={selection} key={selection} />
+        ))}
     </div>
   );
 };
 
-const ChevronIcon = ({ expanded }) => {
+const ChevronIcon = ({ expanded }: { expanded: boolean }) => {
   const chevClass = "text-accent text-opacity-80 my-auto mr-1";
   return expanded ? (
     <FaChevronDown size="14" className={chevClass} />
@@ -55,7 +57,7 @@ const ChevronIcon = ({ expanded }) => {
   );
 };
 
-const TopicSelection = ({ selection }) => (
+const TopicSelection = ({ selection }: { selection: string }) => (
   <div className="dropdown-selection">
     <BsHash size="24" className="text-gray-400" />
     <h5 className="dropdown-selection-text">{selection}</h5>
@@ -67,5 +69,10 @@ const ChannelBlock = () => (
     <h5 className="channel-block-text">Channels</h5>
   </div>
 );
+
+type dropdownPropsType = {
+  header: string;
+  selections: string[];
+};
 
 export default ChannelBar;
