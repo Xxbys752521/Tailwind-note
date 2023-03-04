@@ -1,7 +1,6 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { BsHash } from "react-icons/bs";
 import { FaChevronDown, FaChevronRight, FaPlus } from "react-icons/fa";
-import { v4 as uuidv4 } from "uuid";
 
 const topics = ["tailwind-css", "react"];
 const questions = ["jit-compilation", "purge-files", "dark-mode"];
@@ -66,7 +65,7 @@ const TopicSelection = ({ selection }: { selection: string }) => (
 
 const ChannelBlock = () => (
   <div className="channel-block">
-    <h5 className="channel-block-text">Channels</h5>
+    <h5 className="channel-block-text">Some one's Notion</h5>
   </div>
 );
 
