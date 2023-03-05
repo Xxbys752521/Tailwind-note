@@ -1,12 +1,7 @@
 import { FC } from "react";
-import { BsPlus, BsGearFill } from "react-icons/bs";
-import {
-  FiDownload,
-  FiSettings,
-  FiStar,
-  FiTrash,
-  FiUser,
-} from "react-icons/fi";
+import { BsPlus } from "react-icons/bs";
+import { FiDownload, FiSettings, FiStar, FiTrash } from "react-icons/fi";
+import MyPopover1 from "./popOver1";
 
 const SideBar = () => {
   return (
@@ -15,7 +10,7 @@ const SideBar = () => {
                   bg-white dark:bg-gray-900 shadow-lg"
     >
       <div>
-        <SideBarIcon icon={<FiUser size="24" />} text="Your Account" />
+        <MyPopover1 />
         <Divider />
         <SideBarIcon icon={<BsPlus size="32" />} text="Add a page" />
         <SideBarIcon icon={<FiDownload size="20" />} text="Import" />
@@ -30,7 +25,7 @@ const SideBar = () => {
   );
 };
 
-const SideBarIcon: FC<siderBarPropsType> = ({ icon, text }) => (
+export const SideBarIcon: FC<siderBarPropsType> = ({ icon, text }) => (
   <div
     className="relative flex items-center justify-center 
     h-12 w-12 mt-2 mb-2 mx-auto  

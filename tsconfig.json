@@ -18,8 +18,8 @@
   },
   "include": [
     "src",
-    "src/components/noteDirectory/.tsx",
-    "src/components/noteDirectory/.tsx"
+    "src/components/ChannelBar/.tsx",
+    "src/components/ChannelBar/.tsx"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

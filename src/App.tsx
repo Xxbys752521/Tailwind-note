@@ -1,4 +1,4 @@
-import Channelbar from "./components/noteDirectory/noteDirectory";
+import Channelbar from "./components/ChannelBar/contant";
 import ContentContainer from "./components/ContentContainer/contentContainer";
 import SideBar from "./components/SideBar/sideBar";
 
